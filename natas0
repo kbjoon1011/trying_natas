@@ -12,6 +12,6 @@ session = requests.Session()
 response = session.request('GET', url, auth=(username,password))
 
 #Filtering to get a password
-result = re.findall('<!--The password for natas1 is (.*) -->', response.text)[0]
+result = re.findall('<!--The password for natas[0-9?] is (.*) -->', response.text)[0]
 
 print(result)
