@@ -1,0 +1,13 @@
+import requests
+import re
+
+username = 'natas1'
+password = 'gtVrDuiDfck831PqWsLEZy5gyDz1clto'
+url = f'http://{username}.natas.labs.overthewire.org/'
+
+session = requests.Session()
+
+response = session.request('GET', url, auth=(username,password))
+result = re.findall(f'<!--The password for natas[0-9?] is (.*) -->', response.text)[0]
+
+print(result)
