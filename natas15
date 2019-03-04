@@ -26,9 +26,11 @@ while flag:
             pw.append(c)
             flag = True
             break
+
+#Print out the password
 print(''.join(pw))
 #Filtering to get a password
 result = response.text
 #result = re.findall('Successful login! The password for natas15 is (.*)<br>', response.text)[0]
 
-print(result)
+#print(result)
