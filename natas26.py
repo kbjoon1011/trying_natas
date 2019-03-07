@@ -1,7 +1,6 @@
 # Import Library
 import requests
 import re
-from string import *
 
 # Setting variables needed
 username = 'natas26'
