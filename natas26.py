@@ -8,7 +8,7 @@ password = 'oGgWAJ7zcGT28vYazGo4rkhOPDhBu34T'
 
 url=f'http://{username}.natas.labs.overthewire.org/'
 pw = []
-payloads={"x1":"43","y1":"65","x2":"33","y2":"76"}
+
 # Connect to natas
 session = requests.session()
 response = session.get(url, auth=(username,password))
